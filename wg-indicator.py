@@ -51,15 +51,15 @@ class Indicator():
         return menu
 
     def up_vpn(self, source):
-        os.system("wg-quick up wg0")
+        os.system("nohup sudo wg-quick up wg0 >/dev/null 2>&1")
 
     def down_vpn(self, source):
-        os.system("wg-quick down wg0")
+        os.system("nohup sudo wg-quick down wg0 >/dev/null 2>&1")
 
     def monitor_vpn(self):
         while True:
             time.sleep(1)
-            
+
             if len(subprocess.check_output(['sudo', 'wg'])) == 0:
                 GLib.idle_add(
                         self.indicator.set_icon,
