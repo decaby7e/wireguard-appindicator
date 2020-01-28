@@ -18,19 +18,24 @@
 
 /* exported init */
 
+const GLib = imports.gi.GLib;
+const ExtDir = GLib.build_filenamev([global.userdatadir, 'extensions/wireguard-appindicator@decaby7e.ranvier.net']);
+
 class Extension {
    constructor(){}
 
     enable() {
-	const Util = imports.misc.util;
-        let python_script = '/home/decaby7e/.local/share/gnome-shell/extensions/wireguard-appindicator@decaby7e.ranvier.net/wg-indicator.py';
-        Util.spawnCommandLine(python_script + " up");
+	    // const Util = imports.misc.util;
+        let python_script = ExtDir + '/wg-indicator.py';
+        // Util.spawnCommandLine(python_script + " up");
+        GLib.spawn_command_line_sync(python_script + " up")
     }
 
     disable() {
-	const Util = imports.misc.util;
-        let python_script = '/home/decaby7e/.local/share/gnome-shell/extensions/wireguard-appindicator@decaby7e.ranvier.net/wg-indicator.py';
-        Util.spawnCommandLine(python_script + " down");
+	    // const Util = imports.misc.util;
+        let python_script = ExtDir + '/wg-indicator.py';
+        // Util.spawnCommandLine(python_script + " down");
+        GLib.spawn_command_line_sync(python_script + " down")
     }
 }
 
