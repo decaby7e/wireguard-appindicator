@@ -2,6 +2,10 @@
 ## Configuration
 As of 2019.12.24, you must manually configure your interface name if it is not wg0 by modifying the script. In the future, I will make this a cleaner process.
 
+## Dependencies
+
+Ubuntu: gir1.2-appindicator3-0.1
+
 ## Usage
 To use this indicator app, either install the provided Gnome Shell extension or run the standalone script.
 

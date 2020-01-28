@@ -134,7 +134,7 @@ def daemonize(action):
     if action == 'up':
         try:
             open(pid_file, 'r')
-            print('[ Info ] Service already running. Run with `clean` if this is a mistake.')
+            print('[ Error ] Service already running. Check ~/.config/wg-indicator for dead PID files?')
             hard_exit()
 
         except IOError:
@@ -151,11 +151,12 @@ def daemonize(action):
             sys.exit()
 
         except IOError:
-            print('[ Info ] Service not running. Run with `clean` if this is a mistake.')
+            print('[ Error ] Service not running. Check ~/.config/wg-indicator for dead PID files?')
             hard_exit()
-    
+
     else:
         raise ValueError
+
 
 def exit_handler():
     print('[ Info ] Exit signal detected. Exiting gracefully...')

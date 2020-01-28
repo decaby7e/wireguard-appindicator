@@ -25,16 +25,12 @@ class Extension {
    constructor(){}
 
     enable() {
-	    // const Util = imports.misc.util;
         let python_script = ExtDir + '/wg-indicator.py';
-        // Util.spawnCommandLine(python_script + " up");
         GLib.spawn_command_line_sync(python_script + " up")
     }
 
     disable() {
-	    // const Util = imports.misc.util;
         let python_script = ExtDir + '/wg-indicator.py';
-        // Util.spawnCommandLine(python_script + " down");
         GLib.spawn_command_line_sync(python_script + " down")
     }
 }
