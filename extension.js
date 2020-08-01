@@ -19,7 +19,12 @@
 /* exported init */
 
 const GLib = imports.gi.GLib;
-const ExtDir = GLib.build_filenamev([global.userdatadir, 'extensions/wireguard-appindicator@decaby7e.ranvier.net']);
+
+let homeDir = GLib.get_home_dir();
+// let confDir = GLib.get_user_config_dir();
+// let dataDir = GLib.get_user_data_dir();
+
+const ExtDir = homeDir + '/.local/share/gnome-shell/extensions/wireguard-appindicator@decaby7e.ranvier.net'
 
 class Extension {
    constructor(){}

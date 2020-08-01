@@ -3,6 +3,7 @@
   "description": "Enable, disable, and view details of Wireguard VPN.",
   "uuid": "wireguard-appindicator@decaby7e.ranvier.net",
   "shell-version": [
-    "3.34"
+    "3.34",
+    "3.36"
   ]
 }
